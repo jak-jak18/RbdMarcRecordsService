@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Deploy",
+    "\\MarcRecordServiceApp",
+    "\\MarcRecordServiceApp\\MarcRecordServiceApp",
+    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core",
+    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\DataAccess",
+    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\DataAccess\\Entities",
+    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\MarcRecord",
+    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\Utilities"
+  ],
+  "SelectedNode": "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\Utilities\\EmailMessageData.cs",
+  "PreviewInSolutionExplorer": false
+}
