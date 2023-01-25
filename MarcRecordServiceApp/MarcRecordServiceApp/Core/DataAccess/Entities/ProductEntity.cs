@@ -30,7 +30,7 @@ namespace MarcRecordServiceApp.Core.DataAccess.Entities
         public string PublisherName { get; set; }
 
         /// <summary>
-        /// 
+        /// Populate function for values
         /// </summary>
         /// <param name="reader"></param>
         public void Populate(SqlDataReader reader)

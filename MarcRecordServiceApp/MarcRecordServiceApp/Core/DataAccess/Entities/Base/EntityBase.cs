@@ -6,4 +6,9 @@ namespace MarcRecordServiceApp.Core.DataAccess.Entities.Base
 	{
 		protected static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.FullName);
 	}
+
+	public class EntityData
+	{
+        protected static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.LastName);
+    }
 }
