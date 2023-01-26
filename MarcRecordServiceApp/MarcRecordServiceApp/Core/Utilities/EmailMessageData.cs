@@ -56,6 +56,15 @@ namespace MarcRecordServiceApp.Core.Utilities
                 }
             }
 
+            //FromDisplayName
+            if (null != FromDisplayName) {
+                if (!string.IsNullOrEmpty(FromDisplayName)) 
+                { 
+                    Log.DebugFormat("Add to From", FromDisplayName)
+                    message.From.Add(FromDisplayName);
+                }
+            }
+
             // CC addresses
             if (null != CcRecipients)
             {
@@ -120,14 +129,13 @@ namespace MarcRecordServiceApp.Core.Utilities
 
 
         /// <summary>
-        /// 
+        /// Function for sending out messages from clients
         /// </summary>
         /// <returns></returns>
         public bool Send()
         {
             try
             {
-                Log.Debug(ToString());
                 MailMessage message = GetMailMessage();
 
                 SmtpClient client = new SmtpClient();

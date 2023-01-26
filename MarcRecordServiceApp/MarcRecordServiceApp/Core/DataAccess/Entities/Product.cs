@@ -73,6 +73,18 @@ namespace MarcRecordServiceApp.Core.DataAccess.Entities
                 return (Sku.StartsWith("R2P"));
             }
         }
+        // CategoryName
+        public string CategoryName {
+            get 
+            {
+                return (CategoryName != "Default") ? CategoryName.ToString() : "";
+            }
+            
+            set
+            {
+                CategoryName = "title";
+            }
+        }
     }
 }
 
