@@ -1,15 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Deploy",
-    "\\MarcRecordServiceApp",
     "\\MarcRecordServiceApp\\MarcRecordServiceApp",
-    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core",
-    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\DataAccess",
-    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\DataAccess\\Entities",
-    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\DataAccess\\Entities\\Base",
     "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\MarcRecord",
-    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\Utilities"
+    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\Utilities",
+    "\\MarcRecordServiceSite",
+    "\\MarcRecordServiceSite\\MarcRecordServiceSite",
+    "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content",
+    "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content\\themes",
+    "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content\\themes\\base",
+    "\\References\\Logs"
   ],
+  "SelectedNode": "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content\\Site.css",
   "PreviewInSolutionExplorer": false
 }

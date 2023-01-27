@@ -47,6 +47,19 @@ join (
 join MarcRecordDataSubField subTest on x.marcRecordDataSubFieldsId = subTest.marcRecordDataSubFieldsId 
 where category is null or category <> substring(replace(subTest.subFieldValue, '''', ''''), 0, 500)
 
+update MarcRecordDataCallNumber
+set category = substring(replace(subTest.subFieldValue, '''', ''''), 0, 500), dateUpdated = GETDATE()
+from MarcRecordDataCallNumber mrcn
+join (
+	select p.marcRecordId, min(sub.marcRecordDataSubFieldsId) marcRecordDataSubFieldsId, p.marcRecordProviderTypeId
+	from MarcRecordDataSubField sub
+	join MarcRecordDataField p on p.marcRecordDataFieldId = sub.marcRecordDataFieldId and p.marcRecordProviderTypeId = 1
+	where p.fieldNumber = '400' and sub.subFieldIndicator = '$a' 
+	group by p.RecordId, p.ProviderType
+) as x on x.marcRecordId = mrcn.marcRecordId and mrcn.Id = x.marcRecordProviderTypeId
+join MarcRecordDataField Test on x.marcRecordDataSubFieldsId = subTest.marcRecordDataSubFieldsId 
+where category is null or category <> substring(replace(subTest.subFieldValue, '''', ''''), 0, 500)
+
 
 
 
@@ -143,6 +156,23 @@ select mrf.marcRecordId, mrf.marcRecordProviderTypeId, GETDATE()
 from MarcRecordDataField mrf
 join (
 	select min(mrf.marcRecordDataFieldId) marcRecordDataFieldId, mrf.marcRecordId
+	from MarcRecordDataField mrf
+	where mrf.fieldNumber = '060' and mrf.marcRecordProviderTypeId = 2 and mrf.fieldIndicator like '1%'
+	group by mrf.marcRecordId
+) mrfSingle on mrf.marcRecordDataFieldId = mrfSingle.marcRecordDataFieldId and mrf.marcRecordId = mrfSingle.marcRecordId
+left join MarcRecordDataCallNumber mrcn on mrfSingle.marcRecordId = mrcn.marcRecordId and mrf.marcRecordProviderTypeId = mrcn.providerId
+where mrcn.marcRecordId is null
+
+select mrf.marcRecordId, mrf.marcRecordProviderTypeId, GETDATE()
+, STUFF(( SELECT ', ' + sub.subFieldValue
+				from RecordDataField dat 
+				WHERE mrf.marcRecordDataFieldId = sub.marcRecordDataFieldId
+				FOR XML PATH(''),TYPE)
+				.value('.','NVARCHAR(MAX)'),1,2,'') AS value
+
+from MarcRecordDataField mrf
+join (
+	select min(mrf.RecordDataId) marcRecordDataFieldId, mrf.marcRecordId
 	from MarcRecordDataField mrf
 	where mrf.fieldNumber = '060' and mrf.marcRecordProviderTypeId = 2 and mrf.fieldIndicator like '1%'
 	group by mrf.marcRecordId
