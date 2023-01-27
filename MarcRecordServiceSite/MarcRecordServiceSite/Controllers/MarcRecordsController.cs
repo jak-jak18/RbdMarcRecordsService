@@ -114,9 +114,14 @@ namespace MarcRecordServiceSite.Controllers
             if (!string.IsNullOrWhiteSpace(jsonMarcRecordRequestString))
             {
                 try
-                {
-                    JsonMarcRecordRequest marcRecordRequest = new JavaScriptSerializer().Deserialize<JsonMarcRecordRequest>(jsonMarcRecordRequestString);
-                    return Download(marcRecordRequest);
+                {                    
+                    JsonMarcRecordRequest RecordRequest = new JavaScriptSerializer().Deserialize<JsonMarcRecordRequest>(jsonMarcRecordRequestString);
+                    RecordRequest.name = "Default";
+                    RecordRequest.isbn = "Default";
+                    RecordRequest.title = "Title";
+                    RecordRequest.author = "Author";
+                    marc21.Add_Field(filePath, FieldsToRemove);
+                    return Download(mRecordRequest);
                 }
                 catch (Exception ex)
                 {
@@ -132,6 +137,7 @@ namespace MarcRecordServiceSite.Controllers
             Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
             if (!string.IsNullOrWhiteSpace(jsonMarcRecordRequestString))
             {
+                Log.DebugFormat("Status {0}", jsonMarcRecordRequestString)
                 try
                 {
                     JsonMarcRecordRequest marcRecordRequest = new JavaScriptSerializer().Deserialize<JsonMarcRecordRequest>(jsonMarcRecordRequestString);
