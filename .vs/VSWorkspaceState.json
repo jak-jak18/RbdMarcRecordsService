@@ -1,16 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MarcRecordServiceApp\\MarcRecordServiceApp",
-    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\MarcRecord",
-    "\\MarcRecordServiceApp\\MarcRecordServiceApp\\Core\\Utilities",
-    "\\MarcRecordServiceSite",
-    "\\MarcRecordServiceSite\\MarcRecordServiceSite",
+    "\\Deploy",
     "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content",
     "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content\\themes",
-    "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content\\themes\\base",
-    "\\References\\Logs"
+    "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content\\themes\\base"
   ],
-  "SelectedNode": "\\MarcRecordServiceSite\\MarcRecordServiceSite\\Content\\Site.css",
+  "SelectedNode": "\\Deploy\\LC Call Number Building.sql",
   "PreviewInSolutionExplorer": false
 }
