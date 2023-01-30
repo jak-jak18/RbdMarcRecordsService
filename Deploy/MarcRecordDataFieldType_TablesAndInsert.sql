@@ -34,6 +34,8 @@ INSERT INTO MarcRecordDataFieldType(fieldNumber, description, indicator1, indica
 INSERT INTO MarcRecordDataFieldType(fieldNumber, description, indicator1, indicator2) VALUES ('007', 'PHYSICAL DESCRIPTION FIXED FIELD--GENERAL INFORMATION', 'Undefined', 'Undefined');
 INSERT INTO MarcRecordDataFieldType(fieldNumber, description, indicator1, indicator2) VALUES ('008', 'FIXED-LENGTH DATA ELEMENTS--GENERAL INFORMATION', 'Undefined', 'Undefined');
 INSERT INTO MarcRecordDataFieldType(fieldNumber, description, indicator1, indicator2) VALUES ('010', 'LIBRARY OF CONGRESS CONTROL NUMBER', 'Undefined', 'Undefined');
+INSERT INTO MarcRecordDataFieldType(fieldNumber, description, indicator1, indicator2) VALUES ('011', 'ISBN control', 'ID', 'FIXED-LENGTH');
+INSERT INTO MarcRecordDataFieldType(fieldNumber, description, indicator1, indicator2) VALUES ('012', 'DEWEY', 'DECEIMAL');
 INSERT INTO MarcRecordDataSubFieldType(fieldNumber, indicator, description) VALUES('010', '$a', 'LC control number');
 INSERT INTO MarcRecordDataSubFieldType(fieldNumber, indicator, description) VALUES('010', '$b', 'NUCMC control number');
 INSERT INTO MarcRecordDataSubFieldType(fieldNumber, indicator, description) VALUES('010', '$z', 'Canceled/invalid LC control number');
